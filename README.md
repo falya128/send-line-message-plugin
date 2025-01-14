@@ -1,1 +1,1 @@
-# connect-line-plugin
+# line-chat-plugin
