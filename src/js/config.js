@@ -1,22 +1,25 @@
 (function (PLUGIN_ID) {
   const formEl = document.querySelector('.js-submit-settings');
   const cancelButtonEl = document.querySelector('.js-cancel-button');
-  const messageEl = document.querySelector('.js-text-message');
-  if (!(formEl && cancelButtonEl && messageEl)) {
-    throw new Error('Required elements do not exist.');
-  }
-
-  const config = kintone.plugin.app.getConfig(PLUGIN_ID);
-  if (config.message) {
-    messageEl.value = config.message;
+  const inputEl = document.querySelector('.js-channel-access-token');
+  if (!(formEl && cancelButtonEl && inputEl)) {
+    throw new Error('必要なフィールドが存在しません。');
   }
 
   formEl.addEventListener('submit', (e) => {
     e.preventDefault();
-    kintone.plugin.app.setConfig({ message: messageEl.value }, () => {
-      alert('The plug-in settings have been saved. Please update the app!');
-      window.location.href = '../../flow?app=' + kintone.app.getId();
-    });
+    kintone.plugin.app.setProxyConfig(
+      'https://api.line.me',
+      'POST',
+      {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${inputEl.value}`,
+      },
+      {},
+      () => {
+        window.location.href = '../../flow?app=' + kintone.app.getId();
+      },
+    );
   });
 
   cancelButtonEl.addEventListener('click', () => {

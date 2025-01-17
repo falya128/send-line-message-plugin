@@ -23,15 +23,14 @@
       "css/config.css"
     ],
     "required_params": [
-      "message"
     ]
   },
   "name": {
-    "en": "line-chat-plugin",
-    "ja": "LINEチャットプラグイン"
+    "en": "Send LINE Message",
+    "ja": "LINEメッセージ送信"
   },
   "description": {
-    "en": "Send and receive chats using LINE.",
-    "ja": "LINEを用いたチャットの送受信を行います。"
+    "en": "Send a message to LINE using the Messaging API.",
+    "ja": "Messaging API を用いて、LINEにメッセージを送信します。"
   }
 }

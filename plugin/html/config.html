@@ -1,16 +1,27 @@
 <section class="settings">
-  <h2 class="settings-heading">Settings for line-chat-plugin</h2>
-  <p class="kintoneplugin-desc">This message is displayed on the app page after the app has been updated.</p>
   <form class="js-submit-settings">
-    <p class="kintoneplugin-row">
-      <label for="message">
-        Message:
-        <input type="text" class="js-text-message kintoneplugin-input-text">
+    <div class="kintoneplugin-row">
+      <label for="channel-access-token" class="kintoneplugin-label">
+        チャネルアクセストークン<span class="kintoneplugin-require">*</span>
       </label>
-    </p>
-    <p class="kintoneplugin-row">
-        <button type="button" class="js-cancel-button kintoneplugin-button-dialog-cancel">Cancel</button>
-        <button class="kintoneplugin-button-dialog-ok">Save</button>
-    </p>
+      <p class="kintoneplugin-title">
+        Messaging API を実行するために LINE Developers
+        から取得したチャネルアクセストークンを設定してください。
+      </p>
+      <input
+        type="text"
+        id="channel-access-token"
+        class="js-channel-access-token kintoneplugin-input-text"
+      />
+    </div>
+    <div class="kintoneplugin-row">
+      <button
+        type="button"
+        class="js-cancel-button kintoneplugin-button-dialog-cancel"
+      >
+        キャンセル
+      </button>
+      <button class="kintoneplugin-button-dialog-ok">保存</button>
+    </div>
   </form>
 </section>

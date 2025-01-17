@@ -1,7 +1,5 @@
-.settings-heading {
-  padding: 1em 0;
-}
-
 .kintoneplugin-input-text {
-  width: 20em;
+  width: 50em;
+  display: block;
+  margin-top: 1em;
 }
